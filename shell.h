@@ -189,5 +189,11 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
+int write_history_to_file(info_t *info);
+void write_history_entries(info_t *info, int fd);
+int read_history_from_file(info_t *info);
+char *read_history_content(int fd, off_t size);
+void process_and_store_history(info_t *info, char *buf, int size);
+void add_history_entry(info_t *info, char *entry, int *linecount);
 
 #endif
